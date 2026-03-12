@@ -2,7 +2,7 @@
 
 > Physics Student · Programmer · Exploring the universe with code
 
-Live site: [zabed.netlify.app](https://zabed.netlify.app)  
+Live site: [zabed.netlify.app](https://qlabx.netlify.app)  
 GitHub: [github.com/unflorts](https://github.com/unflorts)
 
 ---
