@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDIT: Page title -->
+  <title>Zabed — Quantum Lab</title>
+  <meta name="description"
+    content="Physics Student & Programmer — Quantum Mechanics, Astrophysics, Computational Physics" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fira+Code:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Reading progress bar -->
+  <div id="progress-bar" style="width:0%"></div>
+
+  <!-- Noise texture overlay -->
+  <div class="noise"></div>
+
+  <!-- Particle background canvas -->
+  <canvas id="canvas"></canvas>
+
+  <!-- ═══════════════════════════════════════
+       NAV
+       ═══════════════════════════════════════ -->
+  <nav id="main-nav">
+    <!-- EDIT: Logo text -->
+    <a class="nav-logo" href="#hero">
+      <i class="fa-solid fa-atom"></i> QUANTUM LAB
+    </a>
+    <ul class="nav-center" id="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#fields">fields</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="theme-btn" title="Toggle theme">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+      </button>
+      <button id="menu-btn" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="container hero-inner">
+      <!-- EDIT: Hero badge text -->
+      <div class="hero-pre">
+        <span class="dot"></span>
+        QUANTUM LAB · UNFLORTS · EST. 2026
+      </div>
+
+      <!-- EDIT: Your name and headline -->
+      <h1 class="hero-heading">
+        <span class="line">Hello, I'm</span>
+        <span class="line"><span class="accent-word">Zabed.</span></span>
+        <span class="line italic-word">Physics &amp; Code.</span>
+      </h1>
+
+      <!-- EDIT: Your short intro -->
+      <p class="hero-sub">
+        Physics student &amp; programmer exploring the universe through code —
+        building simulations, tools, and experiments at the intersection
+        of quantum mechanics and computational thinking.
+      </p>
+
+      <!-- Typing animation — edit phrases in script.js -->
+      <p class="hero-typing">
+        <span id="typed-text"></span><span class="cursor"></span>
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-rocket"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <i class="fa-regular fa-paper-plane"></i> Get In Touch
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>scroll</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT
+       ═══════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <p class="sec-eyebrow reveal">01 &nbsp; About</p>
+      <h2 class="sec-title reveal">Quantum Mechanics<br /><em>meets Code.</em></h2>
+
+      <div class="about-grid">
+        <div class="reveal-left">
+          <div class="about-body">
+            <!-- EDIT: Your bio paragraphs -->
+            <p>I'm <strong>Zabed</strong>, a physics enthusiast and self-taught programmer deeply fascinated by
+              <strong>quantum mechanics</strong> and <strong>astrophysics</strong>. I believe code is the most powerful
+              lens through which we can explore physical reality.</p>
+            <p>My work lives at the intersection of <strong>computational physics</strong> and <strong>scientific
+                programming</strong> — writing simulations, calculators, and experiments that make abstract physics
+              tangible and interactive.</p>
+            <p>Currently exploring how programming can deepen our understanding of the universe, one equation at a time.
+              Always building, always experimenting.</p>
+          </div>
+
+          <div class="about-stats">
+            <!-- EDIT: data-count = the number to count up to -->
+            <div class="stat-box">
+              <div class="stat-num" data-count="2">0</div>
+              <div class="stat-label">Repositories</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num" data-count="5">0</div>
+              <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num" data-count="6">0</div>
+              <div class="stat-label">Focus Areas</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num" data-count="2026">0</div>
+              <div class="stat-label">Est. Year</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards reveal-right">
+          <!-- EDIT: icon class, label, and value per card -->
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-crosshairs"></i></div>
+            <div>
+              <div class="info-label">Focus</div>
+              <div class="info-value">Physics × Programming</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-star-and-crescent"></i></div>
+            <div>
+              <div class="info-label">Domain</div>
+              <div class="info-value">Quantum Mechanics · Astrophysics</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div>
+              <div class="info-label">Current Goal</div>
+              <div class="info-value">Building physics tools &amp; simulations</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="info-label">Based In</div>
+              <!-- EDIT: Your location -->
+              <div class="info-value">Guwahati, Assam, India</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+            <div>
+              <div class="info-label">GitHub</div>
+              <div class="info-value">github.com/unflorts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       FIELDS OF INTEREST
+       ═══════════════════════════════════════ -->
+  <section id="fields">
+    <div class="container">
+      <p class="sec-eyebrow reveal">02 &nbsp; Fields of Interest</p>
+      <h2 class="sec-title reveal">What I Explore</h2>
+
+      <div class="fields-grid">
+        <!-- EDIT: Add/remove/modify field cards -->
+        <div class="field-card reveal">
+          <div class="field-icon-wrap"><i class="fa-solid fa-atom"></i></div>
+          <div class="field-name">Quantum Mechanics</div>
+          <div class="field-desc">Wave-particle duality, superposition, entanglement, and the probabilistic nature of
+            the quantum world.</div>
+        </div>
+        <div class="field-card reveal">
+          <div class="field-icon-wrap"><i class="fa-solid fa-meteor"></i></div>
+          <div class="field-name">Astrophysics</div>
+          <div class="field-desc">Stellar evolution, black holes, cosmology, and the large-scale structure of the
+            universe.</div>
+        </div>
+        <div class="field-card reveal">
+          <div class="field-icon-wrap"><i class="fa-solid fa-microchip"></i></div>
+          <div class="field-name">Computational Physics</div>
+          <div class="field-desc">Numerical methods, differential equations, and algorithmic solutions to physical
+            problems.</div>
+        </div>
+        <div class="field-card reveal">
+          <div class="field-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="field-name">Scientific Computing</div>
+          <div class="field-desc">Using Python and C to model, visualise, and analyse complex scientific data with
+            precision.</div>
+        </div>
+        <div class="field-card reveal">
+          <div class="field-icon-wrap"><i class="fa-solid fa-flask"></i></div>
+          <div class="field-name">Physics Simulations</div>
+          <div class="field-desc">Translating equations of motion and quantum systems into interactive code experiments.
+          </div>
+        </div>
+        <div class="field-card reveal">
+          <div class="field-icon-wrap"><i class="fa-solid fa-puzzle-piece"></i></div>
+          <div class="field-name">Problem Solving</div>
+          <div class="field-desc">Applying logical, mathematical, and computational thinking to real-world challenges.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       SKILLS
+       ═══════════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <p class="sec-eyebrow reveal">03 &nbsp; Skills</p>
+      <h2 class="sec-title reveal">Languages &amp; Tools</h2>
+
+      <div class="skills-cols">
+        <div class="reveal">
+          <div class="skill-group-head"><i class="fa-solid fa-code"></i> Languages</div>
+          <div class="skill-chips">
+            <!-- EDIT: Add/remove chips -->
+            <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="chip"><i class="fa-solid fa-c"></i> C</span>
+            <span class="chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+            <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+            <span class="chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="skill-group-head"><i class="fa-solid fa-screwdriver-wrench"></i> Tools</div>
+          <div class="skill-chips">
+            <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span class="chip"><i class="fa-brands fa-github"></i> GitHub</span>
+            <span class="chip"><i class="fa-solid fa-terminal"></i> VS Code</span>
+            <span class="chip"><i class="fa-solid fa-square-root-variable"></i> NumPy</span>
+            <span class="chip"><i class="fa-solid fa-chart-area"></i> Matplotlib</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="skill-group-head"><i class="fa-solid fa-layer-group"></i> Domains</div>
+          <div class="skill-chips">
+            <span class="chip"><i class="fa-solid fa-wave-square"></i> Simulations</span>
+            <span class="chip"><i class="fa-solid fa-calculator"></i> Sci Calculators</span>
+            <span class="chip"><i class="fa-solid fa-magnifying-glass-chart"></i> Data Viz</span>
+            <span class="chip"><i class="fa-solid fa-infinity"></i> Physics Engines</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       PROJECTS
+       ═══════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <p class="sec-eyebrow reveal">04 &nbsp; Projects</p>
+      <h2 class="sec-title reveal">Built with Physics</h2>
+
+      <div class="projects-grid">
+
+        <!-- EDIT: Update href, name, desc, lang tags per project -->
+        <a href="https://github.com/unflorts/physics-calculator" target="_blank" class="project-card reveal">
+          <div>
+            <div class="project-badge"><i class="fa-solid fa-star"></i> Featured</div>
+            <div class="project-name">physics-calculator</div>
+            <div class="project-desc">A command-line physics calculator covering kinematics, dynamics, thermodynamics,
+              and energy. Built to make quick physics computations accurate and accessible from the terminal — pure
+              Python, zero dependencies.</div>
+            <div class="project-langs">
+              <span class="lang-tag">Python</span>
+              <span class="lang-tag">CLI</span>
+              <span class="lang-tag">Scientific</span>
+              <span class="lang-tag">Physics</span>
+            </div>
+          </div>
+          <div class="project-link-icon">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+        </a>
+
+        <!-- TEMPLATE — Copy and fill for each new project:
+        <a href="YOUR_GITHUB_URL" target="_blank" class="project-card reveal">
+          <div>
+            <div class="project-badge"><i class="fa-solid fa-code"></i> Python</div>
+            <div class="project-name">project-name</div>
+            <div class="project-desc">Brief description of the project.</div>
+            <div class="project-langs">
+              <span class="lang-tag">Python</span>
+            </div>
+          </div>
+          <div class="project-link-icon">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+        </a>
+        -->
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT + FORM
+       ═══════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <p class="sec-eyebrow reveal">05 &nbsp; Contact</p>
+      <h2 class="sec-title reveal">Let's Connect</h2>
+
+      <div class="contact-grid">
+
+        <div class="reveal-left">
+          <!-- EDIT: Intro paragraph -->
+          <p class="contact-intro">
+            Interested in physics, science, simulations, or just want to talk code?
+            I'm always open to connecting with fellow curious minds. Reach out
+            through any channel, or drop a message — I read everything.
+          </p>
+
+          <div class="contact-social-links">
+            <!-- EDIT: Update href for each link -->
+            <a href="https://github.com/unflorts" target="_blank" class="social-row">
+              <div class="social-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="social-meta">
+                <div class="social-platform">GitHub</div>
+                <div class="social-handle">github.com/unflorts</div>
+              </div>
+            </a>
+            <a href="mailto:unflorts@gmail.com" class="social-row">
+              <div class="social-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div class="social-meta">
+                <div class="social-platform">Email</div>
+                <div class="social-handle">unflorts@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://instagram.com/unflorts" target="_blank" class="social-row">
+              <div class="social-icon"><i class="fa-brands fa-instagram"></i></div>
+              <div class="social-meta">
+                <div class="social-platform">Instagram</div>
+                <div class="social-handle">@unflorts</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ── CONTACT FORM (FormSubmit) ──
+             EDIT: Replace email in the action URL.
+             First submission triggers a verification email.
+             After clicking verify, messages land in your inbox directly.
+        -->
+        <div class="contact-form-wrap reveal-right">
+          <div class="form-title">Send a Message</div>
+          <div class="form-subtitle">I'll receive it directly in my inbox.</div>
+
+          <form id="contact-form" action="https://formsubmit.co/unflorts@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from your portfolio!" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <!-- EDIT: Update to your deployed URL -->
+            <input type="hidden" name="_next" value="https://unflorts.github.io/portfolio?sent=1" />
+
+            <div class="form-row-2">
+              <div class="form-row">
+                <label class="form-label" for="fname"><i class="fa-solid fa-user"></i> &nbsp;Name</label>
+                <input class="form-input" type="text" id="fname" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="femail"><i class="fa-regular fa-envelope"></i> &nbsp;Email</label>
+                <input class="form-input" type="email" id="femail" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="fsubject"><i class="fa-solid fa-tag"></i> &nbsp;Subject</label>
+              <input class="form-input" type="text" id="fsubject" name="subject" placeholder="What's this about?" />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="fmessage"><i class="fa-solid fa-message"></i> &nbsp;Message</label>
+              <textarea class="form-textarea" id="fmessage" name="message" placeholder="Write your message here..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+
+            <div class="form-success" id="form-success">
+              <i class="fa-solid fa-circle-check"></i> Message sent! I'll get back to you soon.
+            </div>
+            <div class="form-error" id="form-error">
+              <i class="fa-solid fa-circle-exclamation"></i> Something went wrong. Try emailing directly.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER — EDIT copyright text
+       ═══════════════════════════════════════ -->
+  <footer>
+    <div class="footer-brand">
+      <i class="fa-solid fa-atom" style="color:var(--accent);"></i> &nbsp;Unflorts · Quantum Lab
+    </div>
+    <div class="footer-eq">ĤΨ = EΨ &nbsp;·&nbsp; F = ma &nbsp;·&nbsp; ∇²φ = ρ/ε₀</div>
+    <div class="footer-copy">© 2026 Unflorts. All rights reserved.</div>
+  </footer>
+
+  <!-- JavaScript (loaded last so DOM is ready) -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
